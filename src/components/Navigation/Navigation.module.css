@@ -1,11 +1,23 @@
-.link {
+.nav_container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.nav_link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: #5016c5;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
-.link.active {
+.nav_link.hover,
+.nav_link.focus,
+.nav_link.active {
   color: #e84a5f;
+  cursor: pointer;
+  text-underline-position: below;
 }

@@ -34,32 +34,30 @@ export const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className={css.login_container}>
-        <h2 className={css.heading}>Log in</h2>
-        <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-          <div>
-            <label className={css.label}>
-              Email
-              <input
-                className={css.input}
-                type="email"
-                name="email"
-                id="login-email"
-              />
-            </label>
-          </div>
-          <div>
-            <label className={css.label}>
-              Password
-              <input
-                className={css.input}
-                type="password"
-                name="password"
-                id="login-password"
-              />
-            </label>
-          </div>
-          <button className={css.submitBtn} type="submit">
+      <div className={css.form}>
+        <h2 className={css.form_title}>Log in</h2>
+        <form
+          className={css.form_container}
+          onSubmit={handleSubmit}
+          autoComplete="off"
+        >
+          <label className={css.form_label}>Email </label>
+          <input
+            className={css.form_input}
+            type="email"
+            name="email"
+            id="login-email"
+          />
+
+          <label className={css.form_label}>Password </label>
+          <input
+            className={css.form_input}
+            type="password"
+            name="password"
+            id="login-password"
+          />
+
+          <button className={css.form_btn} type="submit">
             Log In
           </button>
         </form>

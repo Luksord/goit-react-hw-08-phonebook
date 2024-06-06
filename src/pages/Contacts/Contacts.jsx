@@ -10,13 +10,14 @@ import css from './Contacts.module.css';
 const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+
   return (
-    <main>
+    <main className={css.container}>
       <Helmet>
-        <title>Contacts</title>
+        <title className={css.title}>Contacts</title>
       </Helmet>
       {isLoading && !error && <Loader />}
-      <div className={css.appContainer}>
+      <div className={css.app_container}>
         <ContactForm />
         <Filter />
         <ContactList error={error} />

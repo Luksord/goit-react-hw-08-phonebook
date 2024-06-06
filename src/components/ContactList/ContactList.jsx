@@ -14,7 +14,7 @@ export const ContactList = ({ error, contact }) => {
       {error && (
         <p className={css.error}>Failed to fetch data from the server</p>
       )}
-      <h2>Contacts</h2>
+      <h2 className={css.title}>Contacts</h2>
       <ul className={css.contacts_list}>
         {visibleContacts.map(contact => (
           <li className={css.contacts_item} key={contact.id}>

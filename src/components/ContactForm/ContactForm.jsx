@@ -53,7 +53,7 @@ export const ContactForm = () => {
           title="Phone number must start with +, be at least 3 digits and can contain spaces, dashes"
           required
         />
-        <button className={css.button} type="submit">
+        <button className={css.form_btn} type="submit">
           Add contact
         </button>
       </form>

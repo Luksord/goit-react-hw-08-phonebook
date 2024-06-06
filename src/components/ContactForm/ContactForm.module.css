@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
 }
+
 .form_container {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,6 @@
 .form_input {
   width: 250px;
   border: 1px solid #5016c5;
-  /* border-radius: 60px; */
   border-radius: 5px;
   padding: 10px 15px;
   margin-bottom: 20px;
@@ -38,19 +38,22 @@
 }
 
 .form_btn {
-  width: 100px;
+  width: 200px;
+  text-transform: uppercase;
+  font-weight: 400;
   background-color: #f3f6f9;
-  border: none;
+  border: 1px solid #82909e3d;
   border-radius: 20px;
-  color: #82909e;
+  color: black;
   cursor: pointer;
   padding: 10px;
   text-align: center;
   transition: all 0.8s;
-  margin: 0 auto 0;
+  margin: 15px auto 0;
 }
 
 .form_btn:hover {
   background-color: #4267b2;
   color: #fff;
+  font-weight: 600;
 }

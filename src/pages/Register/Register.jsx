@@ -35,43 +35,41 @@ const Register = () => {
       <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className={css.registration_container}>
-        <h2 className={css.heading}>Registration</h2>
-        <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-          <div>
-            <label className={css.label} htmlFor="register-name">
-              Username
-            </label>
-            <input
-              className={css.input}
-              type="text"
-              name="name"
-              id="register-name"
-            />
-          </div>
-          <div>
-            <label className={css.label} htmlFor="register-email">
-              Email
-            </label>
-            <input
-              className={css.input}
-              type="text"
-              name="email"
-              id="register-email"
-            />
-          </div>
-          <div>
-            <label className={css.label} htmlFor="register-password">
-              Password
-            </label>
-            <input
-              className={css.input}
-              type="text"
-              name="password"
-              id="register-password"
-            />
-          </div>
-          <button className={css.submitBtn} type="submit">
+      <div className={css.form}>
+        <h2 className={css.form_title}>Registration</h2>
+        <form
+          className={css.form_container}
+          onSubmit={handleSubmit}
+          autoComplete="off"
+        >
+          <label className={css.form_label} htmlFor="register-name">
+            Username
+          </label>
+          <input
+            className={css.form_input}
+            type="text"
+            name="name"
+            id="register-name"
+          />
+          <label className={css.form_label} htmlFor="register-email">
+            Email
+          </label>
+          <input
+            className={css.form_input}
+            type="text"
+            name="email"
+            id="register-email"
+          />
+          <label className={css.form_label} htmlFor="register-password">
+            Password
+          </label>
+          <input
+            className={css.form_input}
+            type="text"
+            name="password"
+            id="register-password"
+          />
+          <button className={css.form_btn} type="submit">
             Register
           </button>
         </form>

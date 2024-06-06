@@ -14,6 +14,12 @@
   margin: 0;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  margin-left: 25px;
+}
+
 .contacts_btn {
   width: 100px;
   background-color: #f3f6f9;
