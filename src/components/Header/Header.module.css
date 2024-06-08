@@ -1,6 +1,42 @@
-.header {
-  display: flex;
+.container {
+  background-color: rgb(95, 95, 216);
+  width: 100%;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #2a363b;
+  border-bottom: 1px solid #2a363b; */
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 300px;
+}
+
+.title {
+  color: white;
+  font-size: 44px;
+  letter-spacing: 0.09em;
+  padding: 2rem 0 1rem;
+  position: relative;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    padding: 1.5rem 2rem;
+    width: 900px;
+  }
 }

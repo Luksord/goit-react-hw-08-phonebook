@@ -1,74 +1,97 @@
-.contacts_container {
+.container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 25px;
+  padding-top: 50px;
   margin-bottom: 30px;
 }
 
-.contacts_list {
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.title {
-  display: flex;
   justify-content: center;
-  margin-left: 25px;
 }
 
-.contacts_btn {
+.name {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  /* text-align: center; */
+  color: #5016c5;
+  margin-bottom: 10px;
+}
+
+.number {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  /* text-align: center; */
+}
+
+.button {
   width: 100px;
+  height: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
   background-color: #f3f6f9;
-  border: none;
+  border: 1px solid #82909e3d;
   border-radius: 20px;
-  color: #82909e;
+  color: black;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   transition: all 0.8s;
-  margin: 0 auto 0;
 }
 
-.contacts_btn:hover {
+.button:hover {
   background-color: #4267b2;
   color: #fff;
-}
-
-.contacts_item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  flex: calc(25% - 40px);
-}
-
-.contacts_name {
-  margin: 0;
-  padding: 0;
-  font-size: 15px;
-  height: 30px;
-  width: 100px;
-  text-align: center;
-}
-
-.contacts_number {
   font-weight: 600;
-  margin: 10px;
-  font-size: 15px;
 }
 
 .error {
-  color: red;
-  font-size: 18px;
+  color: var(--color-error);
   text-align: center;
 }
 
-.itemContainer {
+/* .list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
+  padding-bottom: 2rem;
 }
+
+.listItem {
+  border-bottom: 1px dotted var(--color-gray);
+  padding-bottom: 1rem;
+}
+
+.listItem:last-child {
+  border: none;
+}
+
+.error {
+  color: var(--color-error);
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .list {
+    gap: 1rem;
+  }
+
+  .listItem {
+    padding-bottom: 1rem;
+  }
+} */

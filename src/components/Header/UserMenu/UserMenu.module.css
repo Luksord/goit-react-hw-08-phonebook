@@ -1,0 +1,57 @@
+.container {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 280px;
+  padding: 0 1rem;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  color: white;
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 400;
+  background-color: #f3f6f9;
+  border: 1px solid #82909e3d;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.8s;
+  margin: 0 auto 0;
+}
+
+.button:hover {
+  background-color: #4267b2;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    gap: 1rem;
+    max-width: 450px;
+  }
+
+  .welcome {
+    font-size: 18px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+}

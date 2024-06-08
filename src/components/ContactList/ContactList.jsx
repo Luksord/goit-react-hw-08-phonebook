@@ -1,29 +1,28 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import { selectVisibleContacts } from '../../redux/selectors';
+import { deleteContact } from '../../redux/operations/contacts';
 import css from './ContactList.module.css';
 
 export const ContactList = ({ error, contact }) => {
   const visibleContacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
-
   const handleDelete = () => dispatch(deleteContact(contact.id));
 
   return (
-    <div>
+    <div className={css.container}>
       {error && (
         <p className={css.error}>Failed to fetch data from the server</p>
       )}
-      <h2 className={css.title}>Contacts</h2>
-      <ul className={css.contacts_list}>
+      <ul className={css.list}>
         {visibleContacts.map(contact => (
-          <li className={css.contacts_item} key={contact.id}>
-            <div>
-              <p className={css.contacts_name}>{contact.name}</p>
-              <p className={css.contacts_number}>{contact.phone}</p>
+          <li className={css.item} key={contact.id}>
+            <div className={css.wrapper}>
+              <p className={css.name}>{contact.name}</p>
+              <p className={css.number}>{contact.number}</p>
             </div>
             <button
-              className={css.contacts_btn}
+              className={css.button}
               type="button"
               onClick={() => handleDelete()}
             >
@@ -36,89 +35,6 @@ export const ContactList = ({ error, contact }) => {
   );
 };
 
-// =======================================================================================
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import css from './ContactList.module.css';
-// // import { useDispatch } from 'react-redux';
-// // import { deleteContact } from '../../redux/contactsSlice';
-
-// export function ContactList({ contacts, handleDelete }) {
-//   // const dispatch = useDispatch();
-
-//   return (
-//     <div className={css.contacts_container}>
-//       <h2>Contacts</h2>
-//       <ul className={css.contacts_list}>
-//         {contacts &&
-//           contacts.map((contact, id) => (
-//             <li className={css.contacts_item} key={id}>
-//               <p className={css.contacts_name}>{contact.name}</p>
-//               <p className={css.contacts_number}>{contact.number}</p>
-//               <button
-//                 type="button"
-//                 className={css.contactItemBtn}
-//                 onClick={() => handleDelete(contact.id)}
-//               >
-//                 Delete
-//               </button>
-//             </li>
-//           ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// ContactList.propTypes = {
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ).isRequired,
-// };
-
-// =======================================================================================
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import css from '../ContactList/ContactList.module.css';
-
-// export function ContactList({ contacts, deleteContact }) {
-//   return (
-//     <div className={css.contacts_container}>
-//       <h2>Contacts</h2>
-//       <ul className={css.contacts_list}>
-//         {contacts.map(({ id, name, number }) => (
-//           <li className={css.contacts_item} key={id}>
-//             <p className={css.contacts_name}>{name}</p>
-//             <p className={css.contacts_number}>{number}</p>
-//             <button
-//               onClick={() => {
-//                 deleteContact(id);
-//               }}
-//               className={css.contacts_btn}
-//             >
-//               Delete
-//             </button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// ContactList.propTypes = {
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ),
-//   deleteContact: PropTypes.func.isRequired,
-// };
-
-// =======================================================================================
+ContactList.propTypes = {
+  error: PropTypes.string,
+};

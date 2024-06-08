@@ -1,18 +1,7 @@
-import { Helmet } from 'react-helmet';
 import { useDispatch } from 'react-redux';
-import { register } from '../../redux/operations';
+import { Helmet } from 'react-helmet-async';
+import { register } from '../../redux/operations/auth';
 import css from './Register.module.css';
-
-// export default function Register() {
-//   return (
-//     <div>
-//       <Helmet>
-//         <title>Registration</title>
-//       </Helmet>
-//       <RegisterForm />
-//     </div>
-//   );
-// }
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -31,45 +20,44 @@ const Register = () => {
   };
 
   return (
-    <main>
+    <main className={css.container}>
       <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className={css.form}>
-        <h2 className={css.form_title}>Registration</h2>
-        <form
-          className={css.form_container}
-          onSubmit={handleSubmit}
-          autoComplete="off"
-        >
-          <label className={css.form_label} htmlFor="register-name">
+      <div className={css.form_container}>
+        <h2 className={css.title}>Registration</h2>
+        <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+          <label className={css.label} htmlFor="register-name">
             Username
           </label>
           <input
-            className={css.form_input}
+            className={css.input}
             type="text"
             name="name"
             id="register-name"
           />
-          <label className={css.form_label} htmlFor="register-email">
+
+          <label className={css.label} htmlFor="register-email">
             Email
           </label>
           <input
-            className={css.form_input}
+            className={css.input}
             type="text"
             name="email"
             id="register-email"
           />
-          <label className={css.form_label} htmlFor="register-password">
+
+          <label className={css.label} htmlFor="register-password">
             Password
           </label>
           <input
-            className={css.form_input}
+            className={css.input}
             type="text"
             name="password"
             id="register-password"
           />
-          <button className={css.form_btn} type="submit">
+
+          <button className={css.button} type="submit">
             Register
           </button>
         </form>

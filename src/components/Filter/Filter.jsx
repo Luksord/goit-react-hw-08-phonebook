@@ -1,22 +1,25 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../../redux/filterSlice';
+import { setFilter } from '../../redux/slices/filterSlice';
+import { nanoid } from '@reduxjs/toolkit';
 import css from './Filter.module.css';
 
 export const Filter = () => {
   const filterInputId = nanoid();
   const dispatch = useDispatch();
 
-  const handleFilter = event => {
-    const filter = event.target.value;
+  const handleFilter = evt => {
+    const filter = evt.target.value;
     dispatch(setFilter(filter));
   };
 
   return (
-    <div className={css.filter_container}>
-      <label className={css.filter_label}>Find contacts by name</label>
+    <div className={css.container}>
+      <h3 className={css.title}>Search contact</h3>
+      <label className={css.label} htmlFor={filterInputId}>
+        Find contacts by name
+      </label>
       <input
-        className={css.filter_input}
+        className={css.input}
         onChange={handleFilter}
         type="text"
         name="filter"
@@ -27,64 +30,3 @@ export const Filter = () => {
     </div>
   );
 };
-// =======================================================================================
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import css from './Filter.module.css';
-// import { useDispatch } from 'react-redux';
-// import { setFilter } from '../../redux/filterSlice';
-
-// export const Filter = ({ filter }) => {
-//   const dispatch = useDispatch();
-
-//   const handleChange = event => {
-//     dispatch(setFilter(event.target.value));
-//   };
-
-//   return (
-//     <div className={css.filter_container}>
-//       <label className={css.filter_label}>Find contacts by name</label>
-//       <input
-//         type="text"
-//         name="filter"
-//         value={filter}
-//         onChange={handleChange}
-//         className={css.filter_input}
-//         placeholder="Enter contact"
-//       />
-//     </div>
-//   );
-// };
-
-// Filter.propTypes = {
-//   filter: PropTypes.string.isRequired,
-// };
-
-// =======================================================================================
-
-// import PropTypes from 'prop-types';
-// import css from '../Filter/Filter.module.css';
-
-// export const Filter = ({ filter, onChangeInput }) => {
-//   return (
-//     <div className={css.filter_container}>
-//       <label className={css.filter_label}>Find contacts by name </label>
-//       <input
-//         type="text"
-//         name="filter"
-//         value={filter}
-//         onChange={onChangeInput}
-//         className={css.filter_input}
-//         placeholder="Enter contact"
-//       />
-//     </div>
-//   );
-// };
-
-// Filter.propTypes = {
-//   filter: PropTypes.string.isRequired,
-//   onChangeInput: PropTypes.func.isRequired,
-// };
-
-// =======================================================================================
